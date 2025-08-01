@@ -1,173 +1,67 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.conteudo {
-    background-color: #111222;
-    border: 2px solid #00fff7;
-    border-radius: 20px;
-    padding: 40px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 0 20px #00fff7;
-}
-
-.conteudo-titulo {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.conteudo-titulo img {
-    width: 60px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 5px #00fff7);
-}
-
-.titulo-principal {
-    font-size: 2rem;
-    color: #00fff7;
-    margin-bottom: 10px;
-}
-
-.titulo-secundario {
-    font-size: 1rem;
-    color: #aaa;
-}
-
-.conteudo-senha {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.conteudo-senha label {
-    margin-bottom: 10px;
-    color: #ccc;
-}
-
-#campo-senha {
-    background: #1c1c2b;
-    border: 1px solid #00fff7;
-    padding: 10px;
-    color: #00fff7;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.parametro {
-    margin-top: 30px;
-}
-
-.parametro-titulo {
-    color: #00fff7;
-    margin-bottom: 20px;
-}
-
-.parametro-coluna__senha {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.parametro-senha {
-    background-color: #1c1c2b;
-    padding: 20px;
-    border-radius: 15px;
-    border: 1px solid #333;
-}
-
-.parametro-senha__titulo {
-    color: #00fff7;
-    margin-bottom: 10px;
-}
-
-.parametro-senha-botoes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.parametro-senha__botao {
-    background-color: #00fff7;
-    border: none;
-    color: #000;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.parametro-senha__botao:hover {
-    transform: scale(1.1);
-}
-
-.parametro-senha__texto {
-    color: #fff;
-}
-
-.parametro-senha-checkbox {
-    margin-top: 10px;
-}
-
-.checkbox {
-    accent-color: #00fff7;
-}
-
-.barra {
-    height: 8px;
-    background-color: #333;
-    border-radius: 4px;
-    margin-bottom: 8px;
-}
-
-.forca {
-    height: 8px;
-    border-radius: 4px;
-    transition: width 0.3s ease;
-}
-
-.forca.fraca {
-    width: 33%;
-    background-color: red;
-}
-
-.forca.media {
-    width: 66%;
-    background-color: yellow;
-}
-
-.forca.forte {
-    width: 100%;
-    background-color: lime;
-}
-
-.parametro-senha-textos {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #999;
-}
-
-.entropia {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #00fff7;
-}
-
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Senhas Barbie</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <section class="conteudo">
+    <div class="conteudo-titulo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png" alt="ícone de cadeado fofo" />
+      <h2 class="titulo-principal">Gerador de Senhas Barbie</h2>
+      <h3 class="titulo-secundario">Estilo e segurança nunca estiveram tão fashion 💅</h3>
+    </div>
+    <div class="conteudo-senha">
+      <label for="senha">Senha</label>
+      <input name="senha" type="text" id="campo-senha" readonly />
+    </div>
+    <div class="parametro">
+      <h3 class="parametro-titulo">Customize sua senha</h3>
+      <div class="parametro-coluna__senha">
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+          <div class="parametro-senha-botoes">
+            <button class="parametro-senha__botao">-</button>
+            <p class="parametro-senha__texto">12</p>
+            <button class="parametro-senha__botao">+</button>
+          </div>
+        </div>
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Características da senha</h4>
+          <div class="parametro-senha-checkbox">
+            <input name="maiusculo" type="checkbox" class="checkbox" checked />
+            <label for="maiusculo">Letras maiúsculas</label>
+          </div>
+          <div class="parametro-senha-checkbox">
+            <input name="minusculo" type="checkbox" class="checkbox" />
+            <label for="minusculo">Letras minúsculas</label>
+          </div>
+          <div class="parametro-senha-checkbox">
+            <input name="numero" type="checkbox" class="checkbox" />
+            <label for="numero">Números</label>
+          </div>
+          <div class="parametro-senha-checkbox">
+            <input name="simbolo" type="checkbox" class="checkbox" />
+            <label for="simbolo">Símbolos</label>
+          </div>
+        </div>
+        <div class="parametro-senha">
+          <h4 class="parametro-senha__titulo">Força da senha</h4>
+          <div class="barra"></div>
+          <div class="forca fraca"></div>
+          <div class="parametro-senha-textos">
+            <p>Fraca</p>
+            <p>Média</p>
+            <p>Forte</p>
+          </div>
+          <p class="entropia"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="main.js"></script>
+</body>
+</html>
